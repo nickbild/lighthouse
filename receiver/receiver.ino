@@ -55,7 +55,7 @@ void loop() {
       Serial.println(rf95.lastRssi(), DEC);
 
       // If this is the message we're looking for, flash the onboard LED.
-      if ((char*)buf == "9959cf4f-f79d-47ab-ad31-1f64bdf99ecc") {
+      if(strcmp((char*)buf, "9959cf4f-f79d-47ab-ad31-1f64bdf99ecc") == 0) {
         digitalWrite(LED, HIGH);
         delay(1000);
         digitalWrite(LED, LOW);
